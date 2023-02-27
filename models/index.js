@@ -10,4 +10,8 @@ Game.belongsTo(User, {
   foreignKey: "user_id",
 });
 
+Review.belongsTo(Game, {
+  foreignKey: "user_id",
+});
+
 module.exports = { User, Game };
