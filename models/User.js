@@ -34,6 +34,15 @@ User.init(
         len: [6],
       },
     },
+    wishList: [{
+      type: DataTypes.INTEGER,
+      reference: {
+        where: {
+          model: 'user',
+          key: 'id',
+        },
+      },
+    }],
   },
   {
     hooks: {
@@ -50,8 +59,8 @@ User.init(
       },
     },
     sequelize,
-    timestamps: false,
-    freezeTableName: false,
+    timestamps: true,
+    freezeTableName: true,
     underscored: true,
     modelName: 'user'
   }

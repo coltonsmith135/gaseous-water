@@ -16,7 +16,7 @@ Game.init(
       allowNull: false,
     },
     release_date: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     rating: {
@@ -27,17 +27,20 @@ Game.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "user",
+    //     key: "id",
+    //   },
+    // },
+    game_img: {
+      type: DataTypes.STRING,
+    }
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "game",
