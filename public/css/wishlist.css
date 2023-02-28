@@ -1,0 +1,74 @@
+* {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+
+  
+body {
+    background: linear-gradient(
+      90deg,
+      rgb(32, 24, 23) 0%,
+      rgba(13, 19, 92, 0.871) 100%
+    );
+    margin: 0;
+  }
+  
+  .heading-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #profile-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  #profile-page, #library, #sign-out {
+    text-decoration: none;
+    color: gray;
+  }
+  
+  header {
+    background: linear-gradient(
+      90deg,
+      rgb(56, 59, 61) 0%,
+      rgba(69, 71, 92, 0.871) 100%
+    );
+    border: 5px solid gray;
+    padding-bottom: 3rem;
+    color: white;
+  }
+  
+  .profile {
+    padding: 1rem 0rem 0rem 1rem;
+  }
+  
+  #profile-pic {
+    height: 90%;
+    width: 40%;
+    border-radius: 100%;
+  }
+  
+  .search-bar {
+    margin-top: 2rem;
+    width: 40%;
+  }
+
+  .wishlist-items {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+}
+
+.game-card {
+      border: 5px solid black;
+    background: linear-gradient(
+      90deg,
+      rgb(56, 59, 61) 0%,
+      rgba(69, 71, 92, 0.871) 100%
+    );
+  }
+
+  .space {
+    margin-bottom: 3rem;
+  }
