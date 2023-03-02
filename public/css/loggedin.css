@@ -3,6 +3,13 @@
   font-weight: bolder;
 }
 
+nav {
+  background: linear-gradient(
+    90deg,
+    rgb(56, 59, 61) 0%,
+    rgba(69, 71, 92, 0.871) 100%
+  );
+}
 
 body {
   background: linear-gradient(
@@ -22,9 +29,9 @@ body {
   padding-right: 1rem;
 }
 
-#profile-page, #library, #sign-out {
+#profile-page, #wishlist, #sign-out {
   text-decoration: none;
-  color: gray;
+  color: rgb(146, 148, 151);
 }
 
 header {
