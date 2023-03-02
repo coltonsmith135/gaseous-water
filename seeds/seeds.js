@@ -1,9 +1,10 @@
 const sequelize = require("../config/connection");
-const { User, Game, Review } = require("../models");
+const { User, Game, Review, WishList } = require("../models");
 
 const userData = require("./userData.json");
 const gameData = require("./gameData.json");
 const reviewData = require("./reviewData.json");
+const wishListData = require('./wishList.json')
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -26,6 +27,11 @@ const seedDatabase = async () => {
       user_id: users[Math.floor(Math.random() * userData.length)].id,
     });
   }
+
+  await WishList.bulkCreate(wishListData, {
+    individualHooks: true,
+    returning: true,
+  }) 
 
   process.exit(0);
 };
