@@ -19,14 +19,15 @@ body {
   );
 }
 
-.card-img-top {
-    height: 100rem;
-}
-
 .search-bar {
   margin-top: 2rem;
   width: 40%;
 }
+
+.card-img-top {
+    height: 100rem;
+}
+
 
 .container {
   color: white;

@@ -1,49 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./public/css/profile.css" />
-    <title>Gaseous Water</title>
-  </head>
-  <body>
-    <div class="heading-container">
-      <div class="left-side">
-        <a id="profile-page"href="#">HOME</a>
-        <a id="library" href="#">LIBRARY</a>
-      </div>
-      <div class="right-side">
-        <a id="sign-out" href="#">SIGN OUT</a>
-      </div>
-    </div>
-    <header>
-      <ul class="nav nav-pills">
-        <li class="flex-column profile">
-          <p>Profile Name</p>
-          <img id="profile-pic" src="./public/images/placeholder.jpg" alt="">
-        </li>
-    </header>
-
-    <div class="search-bar">
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-    <h1 id="fav-heading">FAVORITES</h1>
+  <div class="search-bar">
+    <form class="d-flex" role="search">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+    <p id="pop">Popular Games</p>
     <div class="container-fluid text-center popular">
+      <div class="row">
+        {{#each games as |game|}}
+        <div class="col">
+          Game Title
+          <div class="card">
+            <img
+              src="{{game.game_img}}"
+              class="card-img-top"
+              alt="placeholder"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{game.name}}</h5>
+              <div class="card-text">
+                <p>{{game.platform}}</p>
+                <p>{{game.release_date}}</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+          </div>
+          {{/each}}
+        </div>   
+      </div>
+    </div>
+
+    <p id="new">New Games</p>
+    <div class="container-fluid text-center new">
       <div class="row">
         <div class="col">
           Game Title
@@ -152,36 +147,3 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <h1 id="different">TRY SOMETHING DIFFERENT</h1>
-  <div class="d-flex justify-content-around suggestions">
-    <div class="different-item">
-      <img src="./public/images/placeholder.jpg" class="rounded-circle" alt="...">
-    </div>
-    <div class="different-item">
-      <img src="./public/images/placeholder.jpg" class="rounded-circle" alt="...">
-    </div>
-    <div class="different-item">
-      <img src="./public/images/placeholder.jpg" class="rounded-circle" alt="...">
-    </div>
-
-    
-  </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
