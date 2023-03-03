@@ -15,6 +15,42 @@
   </head>
  
   <body>
+    {{#if logged_in}}
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid header">
+        <a class="navbar-brand" href="./index.html">Gaseous Water</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container-fluid" id="navbar">
+        <div class="heading-container">
+          <div class="left-side">
+            <a id="profile-page"href="#">PROFILE</a>
+            <a id="wishlist" href="#">WISHLIST</a>
+          </div>
+          <div class="right-side">
+            <a id="sign-out" href="#">SIGN OUT</a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <ul class="nav nav-pills">
+        <li class="flex-column profile">
+          <p>Profile Name</p>
+          <img id="profile-pic" src="./public/images/placeholder.jpg" alt="">
+        </li>
+    </header>
+    {{else}}
      <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid header">
       <a class="navbar-brand" href="/">Gaseous Water</a>
@@ -117,6 +153,7 @@
       </div>
     </div>
   </nav>
+  {{/if}}
   {{{body}}}
 
     <script
