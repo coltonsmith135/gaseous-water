@@ -109,10 +109,6 @@
     min-height: 100%;
 }
 
-.game-trailer {
-    display: flex;
-    overflow: hidden;
-}
 
 #about-section {
     margin-top: 3rem;
