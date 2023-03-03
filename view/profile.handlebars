@@ -1,0 +1,37 @@
+ <h1 id="fav-heading">FAVORITES</h1>
+    <div class="container-fluid text-center popular">
+      <div class="row">
+        {{#each games as |game|}}
+        <div class="col">
+          <div class="card">
+            <img
+              src="{{game.game_img}}"
+              class="card-img-top"
+              alt="placeholder"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{game.name}}</h5>
+              <p class="card-text">
+                <p>{{game.platform}}</p>
+                <p>{{game.release_date}}</p>
+                <p>{{game.rating}}</p>
+              </p>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+  <h1 id="different">TRY SOMETHING DIFFERENT</h1>
+  <div class="d-flex justify-content-around suggestions">
+    <div class="different-item">
+      <img src="./public/images/placeholder.jpg" class="rounded-circle" alt="...">
+    </div>
+    <div class="different-item">
+      <img src="./public/images/placeholder.jpg" class="rounded-circle" alt="...">
+    </div>
+    <div class="different-item">
+      <img src="./public/images/placeholder.jpg" class="rounded-circle" alt="...">
+    </div>
