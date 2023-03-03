@@ -1,5 +1,3 @@
-// need id, user_id, game_id,
-// user and game_id would be foreign keys referencing user and gameconst { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require("sequelize");
 
@@ -24,14 +22,9 @@ WishList.init(
         unique: false
       }
     },
-    game_id: {
-      type: DataTypes.INTEGER,
+    game_url: {
+      type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: 'game',
-        key: 'id',
-        unique: false
-      }
     }
   },
   {

@@ -1,1 +1,150 @@
+  <div class="search-bar">
+    <form class="d-flex" role="search">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+    <p id="pop">Popular Games</p>
+    <div class="container-fluid text-center popular">
+      <div class="row">
+        {{#each games as |game|}}
+        <div class="col">
+          Game Title
+          <div class="card">
+            <img
+              src="{{game.game_img}}"
+              class="card-img-top"
+              alt="placeholder"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{game.name}}</h5>
+              <div class="card-text">
+                <p>{{game.platform}}</p>
+                <p>{{game.release_date}}</p>
+                <p>{{game.rating}}</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+          </div>
+          {{/each}}
+        </div>   
+      </div>
+    </div>
 
+    <p id="new">New Games</p>
+    <div class="container-fluid text-center new">
+      <div class="row">
+        <div class="col">
+          Game Title
+          <div class="card">
+            <img
+              src="public/images/placeholder.jpg"
+              class="card-img-top"
+              alt="placeholder"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          Game Title
+          <div class="card">
+            <img
+              src="public/images/placeholder.jpg"
+              class="card-img-top"
+              alt="placeholder"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          Game Title
+          <div class="card">
+            <img
+              src="public/images/placeholder.jpg"
+              class="card-img-top"
+              alt="placeholder"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          Game Title
+          <div class="card">
+            <img
+              src="public/images/placeholder.jpg"
+              class="card-img-top"
+              alt="placeholder"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          Game Title
+          <div class="card">
+            <img
+              src="public/images/placeholder.jpg"
+              class="card-img-top"
+              alt="placeholder"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
