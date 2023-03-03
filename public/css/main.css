@@ -63,6 +63,8 @@ body {
 
 .card {
     border-radius: 50px;
+    width: 300px;
+    height: 300px;
 }
 
 .card-img-top {
@@ -72,3 +74,4 @@ body {
 .card:hover {
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.779);
 }
+

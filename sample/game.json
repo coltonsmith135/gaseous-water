@@ -1,0 +1,117 @@
+{
+    slug: 'diablo',
+    name: 'Diablo',
+    playtime: 1,
+    platforms: [
+      { platform: [Object] },
+      { platform: [Object] },
+      { platform: [Object] }
+    ],
+    stores: [ { store: [Object] } ],
+    released: '1996-12-31',
+    tba: false,
+    background_image: 'https://media.rawg.io/media/games/923/923a5dd13b6e79dd23ab2d09934f0e8d.jpg',
+    rating: 4.39,
+    rating_top: 5,
+    ratings: [
+      { id: 5, title: 'exceptional', count: 236, percent: 50.54 },
+      { id: 4, title: 'recommended', count: 192, percent: 41.11 },
+      { id: 3, title: 'meh', count: 32, percent: 6.85 },
+      { id: 1, title: 'skip', count: 7, percent: 1.5 }
+    ],
+    ratings_count: 464,
+    reviews_text_count: 1,
+    added: 878,
+    added_by_status: {
+      yet: 53,
+      owned: 163,
+      beaten: 460,
+      toplay: 58,
+      dropped: 133,
+      playing: 11
+    },
+    metacritic: 94,
+    suggestions_count: 420,
+    updated: '2023-02-26T17:37:08',
+    id: 29593,
+    score: '74.381546',
+    clip: null,
+    tags: [
+      {
+        id: 31,
+        name: 'Singleplayer',
+        slug: 'singleplayer',
+        language: 'eng',
+        games_count: 206499,
+        image_background: 'https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg'
+      },
+      {
+        id: 7,
+        name: 'Multiplayer',
+        slug: 'multiplayer',
+        language: 'eng',
+        games_count: 35324,
+        image_background: 'https://media.rawg.io/media/games/6fc/6fcf4cd3b17c288821388e6085bb0fc9.jpg'
+      },
+      {
+        id: 411,
+        name: 'cooperative',
+        slug: 'cooperative',
+        language: 'eng',
+        games_count: 3891,
+        image_background: 'https://media.rawg.io/media/games/46d/46d98e6910fbc0706e2948a7cc9b10c5.jpg'
+      },
+      {
+        id: 468,
+        name: 'role-playing',
+        slug: 'role-playing',
+        language: 'eng',
+        games_count: 1437,
+        image_background: 'https://media.rawg.io/media/games/f87/f87457e8347484033cb34cde6101d08d.jpg'
+      }
+    ],
+    esrb_rating: null,
+    user_game: null,
+    reviews_count: 467,
+    saturated_color: '0f0f0f',
+    dominant_color: '0f0f0f',
+    short_screenshots: [
+      {
+        id: -1,
+        image: 'https://media.rawg.io/media/games/923/923a5dd13b6e79dd23ab2d09934f0e8d.jpg'
+      },
+      {
+        id: 291776,
+        image: 'https://media.rawg.io/media/screenshots/b0c/b0cbda2b3b1e42de773ae747363d6095.jpg'
+      },
+      {
+        id: 291777,
+        image: 'https://media.rawg.io/media/screenshots/c1b/c1bbbede6e8f0926e1813ae1cb7a1f80_9FXOLVk.jpg'
+      },
+      {
+        id: 291778,
+        image: 'https://media.rawg.io/media/screenshots/617/617cc168a8e366fc15dbd130b53c9a1b.jpg'
+      },
+      {
+        id: 291779,
+        image: 'https://media.rawg.io/media/screenshots/9f8/9f81f38bee7b596b51b06ae5b040e65a.jpg'
+      },
+      {
+        id: 291780,
+        image: 'https://media.rawg.io/media/screenshots/493/493692329598ca9f7b5d28f14bd77b22.jpg'
+      },
+      {
+        id: 291781,
+        image: 'https://media.rawg.io/media/screenshots/0bc/0bc8e5be32e201b2f9b833ddb6122adb.jpg'
+      }
+    ],
+    parent_platforms: [
+      { platform: [Object] },
+      { platform: [Object] },
+      { platform: [Object] }
+    ],
+    genres: [
+      { id: 4, name: 'Action', slug: 'action' },
+      { id: 5, name: 'RPG', slug: 'role-playing-games-rpg' }
+    ]
+  }
