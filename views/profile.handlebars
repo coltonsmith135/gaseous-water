@@ -1,15 +1,4 @@
-<div class="search-bar">
-    <form class="d-flex" role="search">
-      <input
-        class="form-control me-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
-    <p id="pop">RANDOM GAMES</p>
+ <h1 id="fav-heading">FAVORITES</h1>
     <div class="container-fluid text-center popular">
       <div class="row">
         {{#each games as |game|}}
@@ -22,14 +11,17 @@
             />
             <div class="card-body">
               <h5 class="card-title">{{game.name}}</h5>
-              <div class="card-text">
+              <p class="card-text">
                 <p>{{game.platform}}</p>
                 <p>{{game.release_date}}</p>
                 <p>{{game.rating}}</p>
-              </div>
+              </p>
             </div>
           </div>
-          {{/each}}
         </div>
+        {{/each}}
       </div>
     </div>
+  </div>
+
+  
