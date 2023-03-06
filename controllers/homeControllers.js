@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const { User, WishList } = require("../models");
-const { withAuth, isAuthorized } = require("../utils/auth");
+const { withAuth } = require("../utils/auth");
 const axios = require("axios");
 require("dotenv").config();
 
-router.get("/", withAuth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const games = await axios.get(
-      `https://rawg-video-games-database.p.rapidapi.com/games?key=${process.env.apiKey}`,
+      `https://rawg-video-games-database.p.rapidapi.com/games?&key=${process.env.apiKey}`,
 
       {
         headers: {
@@ -18,6 +18,8 @@ router.get("/", withAuth, async (req, res) => {
       }
     );
 
+    
+
     res.render("homepage", {
       games: games.data.results,
       logged_in: req.session.logged_in,
@@ -27,35 +29,38 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-
 router.get("/game", async (req, res) => {
   console.log(req.query.search);
 
   try {
-  const gameName = req.query.search;
-  const game = await axios.get(
-    `https://api.rawg.io/api/games?search=${gameName}&key=${process.env.apiKey}`)
+    const gameName = req.query.search;
 
+    const game = await axios.get(
+      `https://api.rawg.io/api/games?search=${gameName}&key=${process.env.apiKey}`
+    );
 
+    console.log(game.data.results[0]);
 
-   console.log(game.data.results[0])
-const id = game.data.results[0].id
-console.log(id)
-   const gameDetails = await axios.get(
-    `https://api.rawg.io/api/games/${id}?key=${process.env.apiKey}`)
-    console.log(gameDetails)
+    const id = game.data.results[0].id;
 
-  res.render('gamepage', {
-    game: game.data.results[0],
-    gameDetails: gameDetails.data,
-    logged_in: req.session.logged_in,
-  }) 
-} catch (err) {
-  res.status(500).json(err)
-}
+    console.log(id);
+    const gameDetails = await axios.get(
+      `https://api.rawg.io/api/games/${id}?key=${process.env.apiKey}`
+    );
+
+    console.log(gameDetails);
+
+    res.render("gamepage", {
+      game: game.data.results[0],
+      gameDetails: gameDetails.data,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.get("/profile/:id", async (req, res) => {
+router.get("/profile", async (req, res) => {
   console.log(req.params.id);
   try {
     const userData = await User.findByPk(req.params.id, {
