@@ -55,64 +55,32 @@
     width: 40%;
     border-radius: 100%;
   }
-  
-  .search-bar {
-    margin-top: 2rem;
-    width: 40%;
-  }
-  
-  .card-img-top {
-    height: 100%;
-  }
 
   
-  .gamecard {
+ #gamecard {
+  text-align: center;
   background-color: black;
-  width: 30rem;
+  width: 50%;
   margin-top: 4rem;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  height: 80%;
+  margin-bottom: 10rem;
+  border-radius: 50px;
+  }
+
+  #game-title {
+    width: 100%;
   }
   
-  .gamecard {
-    border-radius: 50px;
-  }
-  
-  .card-img-top {
+  .single-game-image {
+    width: 100%;
     border-radius: 50px 50px 50px 50px;
   }
   
-  .card:hover {
+  .gaming:hover {
     border: 10px solid rgb(87, 84, 84);
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.779);
   }
 
   .game-home {
-    display: flex;
     margin-top: 5rem;
     border: 5px solid white;
   }
-
-  .about-game {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5rem;
-    width: 100%;
-    height: 30rem;
-    border: 5px solid white;
-  }
-
-#about-image {
-    min-width: 100%;
-    min-height: 100%;
-}
-
-
-#about-section {
-    margin-top: 3rem;
-}
-
-#details {
-  font-size: small;
-}

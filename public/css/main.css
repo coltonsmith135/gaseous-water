@@ -9,6 +9,11 @@ nav {
     rgba(69, 71, 92, 0.871) 100%
   );
 }
+
+.login {
+  margin-right: 1rem;
+}
+
 body {
   background: linear-gradient(
     90deg,
@@ -16,100 +21,65 @@ body {
     rgba(13, 19, 92, 0.871) 100%
   );
 }
-.search-bar {
-  margin-top: 2rem;
-  width: 40%;
-}
-
-.container-fluid {
-  color: white;
-}
 
 #pop {
-.container-fluid {
-  color: white;
+  color:white;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
 }
-#pop{
-    margin-top: 8rem;
-    text-align: center;
-    font-size: 2rem;
-    color: white;
+
+.search-bar {
+  margin-top: 2rem;
+}
+
+#game {
+  width: 50%;
 }
 
 .popular {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
+  color: white;
+  width: 90%;
 }
 
-.row {
+
+.col {
     color: white;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
-    width: 40%;
+    width: 100%;
     text-align: center;
 }
 
-
-.card {
-  display: flex;
-  background-color: black;
-  width: 90%;
-.row {
-  color: white;
-  text-align: center;
-  display: grid;
-  grid-template-rows: auto;
-  grid-gap: 10px;
-  /* background-color: #2196F3; */
-  padding: 10px;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-}
-.image {
-  width: 100%;
-  height: 80%;
-}
 .content {
-  height: 40%;
+  height: 10rem;
   overflow-y: scroll;
 }
+
 .content::-webkit-scrollbar {
   display: none;
-  }
-.card {
+ }
+
+.mainpage {
   display: flex;
+  margin-top: 5rem;
+  max-width: 20rem;
   background-color: black;
-  width: 60%;
-  height: 40rem;
   border-radius: 50px;
+  margin-right: 4rem;
 }
-
-.content {
-  height: 20%;
-  overflow-y: scroll;
-}
-
-.content::-webkit-scrollbar {
-  display: none;
-  }
 
 .image {
-  height: 80%;
-}
-
-
-
-.card-img-top {
     border-radius: 50px 50px 0px 0px;
+    width: 20rem;
+    height: 20rem;
 }
-.card:hover {
+.mainpage {
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.779);
 }
 
-@media screen and (max-width: 2040px) {
 @media screen and (max-width: 3200px) {
   .container-fluid {
     display: flex;
@@ -118,15 +88,12 @@ body {
     align-items: center;
   }
 
-  .card {
+  .mainpage {
     display: flex;
     justify-content: center;
-    flex: 1 1 auto;
     align-items: center;
     text-align: center;
     width: 80%;
-    height: 40rem;
   }
+}
 
-}
-}
