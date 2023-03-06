@@ -1,4 +1,4 @@
-# __MARVEL MOVIE 3000__ 🦾🤖🎥
+# __GASEIUS WATER__ ⛽️🌊
 
 
 ## __Table of Contents__ 🐜👨🏻
@@ -6,7 +6,7 @@
  - [The Challenge](#the-challenge-👨😡💪🍏)
  - [Screenshots](#screenshots-🖐🏼🌀🧛🏻‍♂️)
  - [Links](#links-🩸🧙‍♀️)
-- [Our Process](#our-process-⍟🦸‍♂️)
+ - [Our Process](#our-process-⍟🦸‍♂️)
  - [Built With](#built-with-🦅👁)
  - [What We Learned](#what-we-learned-🔫👱‍♂️🎧🎶)
  - [Continued Development](#continued-development-⚫️👩🏻‍🦰)
@@ -19,8 +19,7 @@
 <br>
 
 ## __Overview__ 🕷👨 
-​MARVEL MOVIE 3000 allows the user to search for movies and characters related to the Marvel Universe.
-
+GASEOUS WATER allows the user to search for games by title and once that information is obtained the user can then save the game into a wishlist for themselves.
 <br>
 <hr>
 <br>
@@ -29,10 +28,9 @@
 ​
 ___Users should be able to___:
 ​
-- Type a movie or a character from Marvel that they would like to get information about.
+- Type a game title they would like to view and the information will appear before them on their screen.
 
-- Also, they should be able to click on the movie or character cards to generate information that way if they want to.
-
+- Also, users can save that game into a wishlist if they so choose.
 <br>
 <hr>
 <br>
@@ -40,19 +38,19 @@ ___Users should be able to___:
 ### __Screenshots__ 🖐🏼🌀🧛🏻‍♂️
 <br>
 
-![main-page](./assets/img/Web%20capture_28-12-2022_211430_127.0.0.1.jpeg)
+<!-- ![main-page](./assets/img/Web%20capture_28-12-2022_211430_127.0.0.1.jpeg) -->
 
 <br>
 <hr>
 <br>
 
-![searched-movie](./assets/img/Web%20capture_28-12-2022_211452_127.0.0.1.jpeg)
+<!-- ![searched-movie](./assets/img/Web%20capture_28-12-2022_211452_127.0.0.1.jpeg) -->
 
 <br>
 <hr>
 <br>
 
-![character-page](/assets/img/Screenshot%202023-01-03%2017.40.18.png)
+<!-- ![character-page](/assets/img/Screenshot%202023-01-03%2017.40.18.png) -->
 
 <br>
 <hr>
@@ -60,7 +58,7 @@ ___Users should be able to___:
 
 ### __Links__ 🩸🧙‍♀️
 
-- Our Repository: [Github Repo](https://github.com/appleschaussaa/marvel-movies-3000)
+- Our Repository: [Github Repo](https://github.com/coltonsmith135/gaseous-water)
 - Published URL: [See it in Action!](https://appleschaussaa.github.io/marvel-movies-3000/)
 
 <br>
@@ -70,19 +68,14 @@ ___Users should be able to___:
 ## __Our Process__ ⍟🦸‍♂️
 
 * Started off using Excalidraw to create a wireframe.
-![wireframe](./assets/img/wireframe.png)
+![wireframe](./public/images/Gaseous%20Water.png)
 
 * Once the wireframing was done, we split up the work that needed to be done.
 
-* An index.html and a character.html were created.
+* Templates were made using HTML and then put into Handlebars. All of the Javascript code was created as well. 
 
-* We decided to use Foundation as our framework and started styling our pages.
+* Worked on trying to correct CSS styling and Javascript code.
 
-* Once the html and styling were almost completed the javascript was started.
-
-* Script files were created for the index page and as well as the character page. A third one was created as well which is titled md5.js and the reason for this file is to create a hash which is being used by the Marvel API.
-
-* Once all the files were created, it was just a manner of finalizing/tweaking the code to get the desired effect for our webpage.
 
 <br>
 <hr>
@@ -125,24 +118,29 @@ HTML is done using Foundation Framework.
 ```
 ​
 ```js
-await fetch(marvelApi)
-.then(function (response) {
-  return response.json();
- })
-.then(function (data) {
-  result = data;
+router.get("/game", async (req, res) => {
+  console.log(req.query.search);
+  try {
+    const gameName = req.query.search;
+    const game = await axios.get(
+      `https://api.rawg.io/api/games?search=${gameName}&key=${process.env.apiKey}`
+    );
+    console.log(game.data.results[0]);
+    const id = game.data.results[0].id;
+    console.log(id);
+    const gameDetails = await axios.get(
+      `https://api.rawg.io/api/games/${id}?key=${process.env.apiKey}`
+    );
+    console.log(gameDetails);
+    res.render("gamepage", {
+      game: game.data.results[0],
+      gameDetails: gameDetails.data,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
-
-
-let rottenTomatoes = movieDetails.Ratings.find(
- (rating) => rating.Source === "Rotten Tomatoes"
-);
-
-
-buttonElement += ` <button class="button secondary custom-button" id="search-movie-button" data-movieName="${parsedMovie[i]}">
-    ${parsedMovie[i]}
-    </button>`;
-document.querySelector("#searched-movie").innerHTML = buttonElement;
 ```
 
 <br>

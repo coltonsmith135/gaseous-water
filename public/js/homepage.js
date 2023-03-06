@@ -6,6 +6,25 @@ require('dotenv').config()
 const axios = require('axios')
 
 
+// document
+//   .querySelector("searchbtn")
+//   .addEventListener("click", function (event) {
+//     if (event.target.nodeName !== "BUTTON") {
+//       return;
+//     }
+//     let gameName = event.target.getAttribute("data-gameName");
+//     document.querySelector("#t").value = gameName;
+//   });
+
+// document
+//   .querySelector("#searched-character")
+//   .addEventListener("click", function (event) {
+//     if (event.target.nodeName !== "BUTTON") {
+//       return;
+//     }
+//     let characterText = event.target.getAttribute("data-characterText");
+//     document.querySelector("#character-text").value = characterText;
+//   });
 
 
 // async function getGameList() {
