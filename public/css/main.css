@@ -20,6 +20,12 @@ body {
   margin-top: 2rem;
   width: 40%;
 }
+
+.container-fluid {
+  color: white;
+}
+
+#pop {
 .container-fluid {
   color: white;
 }
@@ -29,11 +35,27 @@ body {
     font-size: 2rem;
     color: white;
 }
+
 .popular {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
 }
+
+.row {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 40%;
+    text-align: center;
+}
+
+
+.card {
+  display: flex;
+  background-color: black;
+  width: 90%;
 .row {
   color: white;
   text-align: center;
@@ -65,12 +87,29 @@ body {
   border-radius: 50px;
 }
 
+.content {
+  height: 20%;
+  overflow-y: scroll;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+  }
+
+.image {
+  height: 80%;
+}
+
+
+
 .card-img-top {
     border-radius: 50px 50px 0px 0px;
 }
 .card:hover {
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.779);
 }
+
+@media screen and (max-width: 2040px) {
 @media screen and (max-width: 3200px) {
   .container-fluid {
     display: flex;
@@ -78,6 +117,7 @@ body {
     justify-content: center;
     align-items: center;
   }
+
   .card {
     display: flex;
     justify-content: center;
@@ -87,4 +127,6 @@ body {
     width: 80%;
     height: 40rem;
   }
+
+}
 }
