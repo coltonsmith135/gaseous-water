@@ -91,7 +91,6 @@
   .game-home {
     display: flex;
     margin-top: 5rem;
-    height: 55rem;
     border: 5px solid white;
   }
 
@@ -114,22 +113,6 @@
     margin-top: 3rem;
 }
 
-.similar-games {
-    margin-top: 10rem;
-    padding-bottom: 10rem;
-}
-
-.similar-image {
-    height: 20rem;
-    width: 30rem;
-}
-
-#similar-heading {
-    margin-bottom: 4rem;
-}
-
-.similar-container {
-    display: flex;
-    justify-content: left;
-    padding-left: 5rem;
+#details {
+  font-size: small;
 }
