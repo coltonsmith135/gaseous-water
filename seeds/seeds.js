@@ -2,8 +2,6 @@ const sequelize = require("../config/connection");
 const { User, Game, Review, WishList } = require("../models");
 
 const userData = require("./userData.json");
-const gameData = require("./gameData.json");
-const reviewData = require("./reviewData.json");
 const wishListData = require('./wishList.json')
 
 const seedDatabase = async () => {

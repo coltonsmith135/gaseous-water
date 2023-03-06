@@ -1,26 +1,16 @@
-  <div class="search-bar">
-    <form class="d-flex" role="search">
-      <input
-        class="form-control me-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
+
     <p id="pop">RANDOM GAMES</p>
     <div class="container-fluid text-center popular">
       <div class="row">
+        <div class="row">
         {{#each games as |game|}}
-        <div class="col">
           <div class="card">
             <img
-              src="{{game.game_img}}"
-              class="card-img-top"
+              src="{{game.background_image}}"
+              class="card-img-top image"
               alt="placeholder"
             />
-            <div class="card-body">
+            <div class="card-body content">
               <h5 class="card-title">{{game.name}}</h5>
               <div class="card-text">
                 <p>{{game.platform}}</p>
@@ -30,6 +20,6 @@
             </div>
           </div>
           {{/each}}
-        </div>   
+        </div>
       </div>
     </div>
