@@ -1,30 +1,30 @@
 # __GASEIUS WATER__ ⛽️🌊
 
 
-## __Table of Contents__ 🐜👨🏻
+## __Table of Contents__ 
 - [Overview](#overview-🕷👨)
- - [The Challenge](#the-challenge-👨😡💪🍏)
- - [Screenshots](#screenshots-🖐🏼🌀🧛🏻‍♂️)
- - [Links](#links-🩸🧙‍♀️)
- - [Our Process](#our-process-⍟🦸‍♂️)
- - [Built With](#built-with-🦅👁)
- - [What We Learned](#what-we-learned-🔫👱‍♂️🎧🎶)
- - [Continued Development](#continued-development-⚫️👩🏻‍🦰)
- - [Useful Resources](#useful-resources-🙅🏿🐈‍⬛👨🏿‍🦱)
-- [Authors](#authors-stan)
-- [Acknowledgments](#acknowledgments-🚀🦝)
+ - [The Challenge](#the-challenge)
+ - [Screenshots](#screenshots)
+ - [Links](#links)
+ - [Our Process](#our-process)
+ - [Built With](#built-with)
+ - [What We Learned](#what-we-learned)
+ - [Continued Development](#continued-development)
+ - [Useful Resources](#useful-resources)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgments)
 
 <br>
 <hr>
 <br>
 
-## __Overview__ 🕷👨 
+## __Overview__ 
 GASEOUS WATER allows the user to search for games by title and once that information is obtained the user can then save the game into a wishlist for themselves.
 <br>
 <hr>
 <br>
 
-### __The Challenge__ 👨😡💪🍏
+### __The Challenge__ 
 ​
 ___Users should be able to___:
 ​
@@ -38,39 +38,39 @@ ___Users should be able to___:
 ### __Screenshots__ 🖐🏼🌀🧛🏻‍♂️
 <br>
 
-<!-- ![main-page](./assets/img/Web%20capture_28-12-2022_211430_127.0.0.1.jpeg) -->
+![searched-movie](./public/images/Gaseous%20Water.png)
 
 <br>
 <hr>
 <br>
 
-<!-- ![searched-movie](./assets/img/Web%20capture_28-12-2022_211452_127.0.0.1.jpeg) -->
+![main-page](./public/images/Screenshot%202023-03-05%2023.14.35.png)
 
 <br>
 <hr>
 <br>
 
-<!-- ![character-page](/assets/img/Screenshot%202023-01-03%2017.40.18.png) -->
+![character-page](./public/images/Gaseous%20Water%20gif.gif)
 
 <br>
 <hr>
 <br>
 
-### __Links__ 🩸🧙‍♀️
+### __Links__ 
 
 - Our Repository: [Github Repo](https://github.com/coltonsmith135/gaseous-water)
-- Published URL: [See it in Action!](https://appleschaussaa.github.io/marvel-movies-3000/)
+- Published URL: [STILL IN PROGRESS. WILL BE AVAILABLE SOON.]()
 
 <br>
 ​<hr>
 <br>
 
-## __Our Process__ ⍟🦸‍♂️
+## __Our Process__ 
 
 * Started off using Excalidraw to create a wireframe.
 ![wireframe](./public/images/Gaseous%20Water.png)
 
-* Once the wireframing was done, we split up the work that needed to be done.
+* Once the wire framing was done, we split up the work that needed to be done.
 
 * Templates were made using HTML and then put into Handlebars. All of the Javascript code was created as well. 
 
@@ -85,36 +85,57 @@ ___Users should be able to___:
 
 - Semantic HTML5 markup
 - CSS Custom Properties
-- Foundation (Bootstrap Alternative)
-- CSS Grid
+- Boostrap
 - Javascript
 - Mobile-first workflow
-- [OMDB API](https://www.omdbapi.com/)
-- [Marvel API](https://rapidapi.com/stefan.skliarov/api/Marvel/)
+- [RAWG API](https://rawg.io/apidocs)
+- AXIOS
+- Sequelize
+- BCRYPT
+- Express
+- Handlebars
+- Nodemon
+- MYSQL
+- DOTENV
 
 <br>
 <hr>
 <br>
 
-### __What We learned__ 🔫👱‍♂️🎧🎶
+### __What We learned__
 ​
 The following are examples within our code that we learned from doing this project.
 ​
 ​
 ```html
-HTML is done using Foundation Framework.
-
-<input type="text" autocomplete="off"/>
-
-<div class="cell large-10"></div>
-
-<div class="grid-x grid-margin-x small-up-2 medium-up-3 pt15"></div>
+{{#each games as |game|}}
+          <div class="card mainpage">
+            <img
+              src="{{game.background_image}}"
+              class="card-img-top image"
+              alt="placeholder"
+            />
+            <div class="card-body content">
+              <h5 class="card-title">{{game.name}}</h5>
+              <div class="card-text">
+                <p>{{game.platform}}</p>
+                <p>{{game.release_date}}</p>
+                <p>{{game.rating}}</p>
+              </div>
+            </div>
+          </div>
+          {{/each}}
 ```
 ​
 ```css
-.pt15 {
-  padding-top: 50px !important;
-}
+  nav {
+    background: linear-gradient(
+      90deg,
+      rgb(56, 59, 61) 0%,
+      rgba(69, 71, 92, 0.871) 100%
+    );
+  }
+  
 ```
 ​
 ```js
@@ -147,30 +168,28 @@ router.get("/game", async (req, res) => {
 <hr>
 <br>
 
-### __Continued Development__ ⚫️👩🏻‍🦰
+### __Continued Development__ 
 ​
-After finishing our project, we understand things more clearly now. We also understand Foundation well enough now to be able to use it without too much of an issue. We have better understanding of CSS and Javascript and so for our future projects we hope to implement our knowledge into those future projects to make them better than what we have right now.
+After finishing our project, we understand things more clearly now. We also understand Handlebars well enough now to be able to use it without too much of an issue. We also understand the MVC better as well.
 
 <br>
 <hr>
 <br>
 
-### __Useful Resources__ 🙅🏿🐈‍⬛👨🏿‍🦱
+### __Useful Resources__
 ​
 - [Markdown Guide](https://github.com/darsaveli/Readme-Markdown-Syntax) - This really helps with the understanding of Markdown syntax for READMEs and it allowed us to create a nicely structured README.
-- [Font Generator](https://www.fontgenerator.org/full-crazy) - Google Fonts was not able to provide the font that we wanted so we turned to this Font Generator to create special fonts. All we had to do was type in the words that we wanted to have generated and then we copied and pasted them into the html.
-- [Hashing](https://lig-membres.imag.fr/donsez/cours/exemplescourstechnoweb/js_securehash/) - MD5 is a cryptographic hash function algorithm that takes the message as input of any length and changes it into a fixed-length message of 16 bytes. MD5 algorithm stands for the message-digest algorithm.
 
 <br>
 <hr>
 <br>
 
-## __Authors__ ![Stan](./assets/img/StanLee_Think.png)
+## __Authors__
 
-- Sakthipriya Loganathan 
-    *  GitHub - [SPloganathan](https://github.com/SPloganathan)
-- Robert Schauss 
-    *  GitHub - [Robert](https://github.com/appleschaussaa)
+- Colton Smith 
+    *  GitHub - [coltonsmith135](https://github.com/coltonsmith135)
+- Curran Collins
+    *  GitHub - [Curran](https://github.com/CurranCollins)
 - Paull Shin 
     *  GitHub - [paullsshin](https://github.com/paullsshin)
 
@@ -178,9 +197,9 @@ After finishing our project, we understand things more clearly now. We also unde
 <hr>
 <br>
 
-## __Acknowledgments__ 🚀🦝
+## __Acknowledgments__
 ​
-Everyone in our group did an amazing job! We each split our work into sections that were manageable and whenever we needed help or someone saw something that could cause an issue, it was addressed almost right away. Everyone contributed so much of their time and effort and we are happy with what we created! Hope you guys enjoy!
+This project was not an easy one and we faced some struggles and losses, but we made it. We plan to develop this project more so it can become a better and fully functioning website.
 
 <br>
 <hr>
