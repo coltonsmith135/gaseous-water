@@ -22,7 +22,7 @@
         </li>
     </header>
     
-    <div class="container-fluid game-home">
+    {{!-- <div class="container-fluid d-flex justify-content-between align-items-center game-home">
         <div class="card gaming" id="gamecard">
             <div id="game-title">
                 <h1>{{game.name}}</h1>
@@ -32,8 +32,232 @@
             </div>
             <img id="gamepage" src="{{game.background_image}}" class="card-img-top single-game-image" alt="...">
         </div>
+        <div class="d-flex text-center saveButton">
+              <button type="button text-center" class="btn" id="saveBtn">Save to Favorites</button>
+            </div>
+    </div>
        
-
+    {{#if logged_in}}
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid header">
+        <a class="navbar-brand" href="/">Gaseous Water</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container-fluid" id="navbar">
+        <div class="heading-container">
+          <div class="left-side">
+            <a id="profile-page"href="#">PROFILE</a>
+            <a id="wishlist" href="#">WISHLIST</a>
+          </div>
+          <div class="right-side">
+            <a id="sign-out" href="#">SIGN OUT</a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <ul class="nav nav-pills">
+        <li class="flex-column profile">
+          <p>Profile Name</p>
+          <img id="profile-pic" src="./public/images/placeholder.jpg" alt="">
+        </li>
+    </header>
+    {{else}}
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid header">
+        <a class="navbar-brand" href="/">Gaseous Water</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-flex justify-content-end"
+          id="navbarNav"
+        >
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary login"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            Login
+          </button>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="staticBackdrop"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Login
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping"
+                    >EMAIL:
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Your Email"
+                    aria-label="Username"
+                    aria-describedby="addon-wrapping"
+                    id="email-login"
+                  />
+                </div>
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping"
+                    >PASSWORD:
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Your Password"
+                    aria-label="Username"
+                    aria-describedby="addon-wrapping"
+                    id="password-login"
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" id="login-btn" class="btn btn-primary">
+                  Welcome to Gaseous Water Fellow Gamer!
+                </button>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="navbar-nav">
+            <div class="nav-item signup">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Sign Up
+              </button>
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Sign Up
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"
+                          >EMAIL:
+                        </span>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Enter Your Email"
+                          aria-label="Username"
+                          aria-describedby="addon-wrapping"
+                          id="email-signup"
+                        />
+                      </div>
+                      <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"
+                          >Username:
+                        </span>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Enter Your Username"
+                          aria-label="Username"
+                          aria-describedby="addon-wrapping"
+                          id="username-signup"
+                        />
+                      </div>
+                      <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"
+                          >PASSWORD:
+                        </span>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Enter Your Password"
+                          aria-label="Username"
+                          aria-describedby="addon-wrapping"
+                          id="password-signup"
+                        />
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="button" id="signup-btn" class="btn btn-primary">
+                        Welcome to Gaseous Water Fellow Gamer!
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    {{/if}} --}}
 
 
     <script
