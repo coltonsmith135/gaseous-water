@@ -1,32 +1,28 @@
-
-    <p id="pop">RANDOM GAMES</p>
-    <div class="container-fluid text-center popular">
-      <div class="row">
-        <div class="col">
-        {{#each games as |game|}}
-          <div class="card mainpage">
-            <img
-              src="{{game.background_image}}"
-              class="card-img-top image"
-              alt="placeholder"
-            />
-            <div class="card-body content">
-              <h5 class="card-title">{{game.name}}</h5>
-              <div class="card-text">
-                <p>{{game.platform}}</p>
-                <p>{{game.release_date}}</p>
-                <p>{{game.rating}}</p>
+<p id="pop">RANDOM GAMES</p>
+<div class="container-fluid text-center popular">
+  <div class="row">
+    <div class="col">
+      {{#each games as |game|}}
+        <div class="card mainpage">
+          <img
+            src="{{game.background_image}}"
+            class="card-img-top image"
+            alt="placeholder"
+          />
+          <div class="card-body content">
+            <h5 class="card-title">{{game.name}}</h5>
+            <div class="card-text">
+              <div class="d-flex flex-wrap justify-content-center">
+              {{#each game.platforms as |x|}}
+                <p class="m-1">{{x.platform.slug}}</p>
+              {{/each}}
               </div>
+              <p>released date: {{game.released}}</p>
+              <p>rating: {{game.rating}}</p>
             </div>
           </div>
-          {{/each}}
         </div>
-      </div>
+      {{/each}}
     </div>
-
-
-
-
-
-
-
+  </div>
+</div>
