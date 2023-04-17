@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const { User, WishList } = require("../models");
-const { withAuth } = require("../utils/auth");
+const User = require("../models");
+const Game = require('../models')
 const axios = require("axios");
 require("dotenv").config();
 
@@ -18,10 +18,13 @@ router.get("/", async (req, res) => {
       }
     );
 
+    console.log(games.data.results[0].platforms[0].platform.slug)
+    const platform = games.data.results[0].platforms[0].platform.slug
     
 
     res.render("homepage", {
       games: games.data.results,
+      platform: platform,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -43,12 +46,12 @@ router.get("/game", async (req, res) => {
 
     const id = game.data.results[0].id;
 
-    console.log(id);
+    console.log("GAME ID: ", id);
     const gameDetails = await axios.get(
       `https://api.rawg.io/api/games/${id}?key=${process.env.apiKey}`
     );
 
-    console.log(gameDetails);
+    console.log("GAME DETAILS: ", gameDetails);
 
     res.render("gamepage", {
       game: game.data.results[0],
@@ -61,26 +64,37 @@ router.get("/game", async (req, res) => {
 });
 
 router.get("/profile", async (req, res) => {
-  console.log(req.params.id);
+  console.log("REQ.SESSION: ", req.session);
   try {
-    const userData = await User.findByPk(req.params.id, {
+    console.log("Session ID User: ", req.session.user_id)
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
     });
-
+    
     const user = userData.get({ plain: true });
-    console.log(user);
+
+    const gameData = await Game.findAll({
+     include: [{model: User, attributes: ['id', 'userName']}],
+     where: {user_id: req.session.user_id}
+
+    })
+    const games = gameData.map((game) => {
+      game.get({ plain: true })
+    })
 
     res.render("profile", {
       ...user,
-      logged_id: true,
+      games, 
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
 
 router.get("/login", (req, res) => {
-  if (req.session.logged_id) {
+  if (req.session.logged_in) {
     res.redirect("/profile");
     return;
   }
