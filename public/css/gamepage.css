@@ -82,5 +82,29 @@
 
   .game-home {
     margin-top: 5rem;
+    padding: 8rem;
     border: 5px solid white;
+  }
+
+  #saveBtn {
+    color: aliceblue;
+    background: linear-gradient(
+      90deg,
+      rgb(47, 138, 199) 20%,
+      rgba(4, 25, 255, 0.871) 80%
+    );
+    border: 5px solid black;
+    height: 4rem;
+  }
+
+  #saveBtn:hover {
+    background: linear-gradient(
+      90deg,
+      rgb(47, 138, 199) 20%,
+      rgba(4, 25, 255, 0.871) 80%
+    );
+    border: 5px solid black;
+    height: 4rem;
+    transform: scale(1.2);
+    color: rgb(0, 5, 8);
   }
