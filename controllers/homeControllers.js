@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const User = require("../models");
-const Game = require('../models')
+const { User, Game } = require("../models")
 const axios = require("axios");
 require("dotenv").config();
 
@@ -29,6 +28,26 @@ router.get("/", async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+router.post("/game", async (req, res) => {
+  try {
+    const gameData = await Game.create({ 
+     user_id: req.session.user_id,
+     game_url: req.body.game_url || null,
+     gameName: req.body.gameName,
+     background_image: req.body.gameImage,
+     rating: req.body.gameRating,
+     platform: req.body.platform || null,
+     release_date: req.body.gameReleased,
+     description: req.body.details,
+    });
+   res.status(200).json(gameData)
+    
+  } catch (err) {
+    console.log("CREATE USER ERROR: ", err)
+    res.status(400).json(err);
   }
 });
 
@@ -78,9 +97,13 @@ router.get("/profile", async (req, res) => {
      where: {user_id: req.session.user_id}
 
     })
-    const games = gameData.map((game) => {
-      game.get({ plain: true })
-    })
+
+    console.log('GAMEDATA: ', gameData)
+    
+    const games = gameData.map((game) =>
+      game.get({ plain: true }))
+
+    console.log('GAMES: ', games)
 
     res.render("profile", {
       ...user,
