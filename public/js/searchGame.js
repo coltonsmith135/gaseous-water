@@ -1,5 +1,7 @@
 console.log('SEARCH JS FILE CONNECTED')
+// const gameItemName = document.getElementById(gameItemName).value
 
+// console.log('GAMENAME: ', gameItemName)
 const searchGame = async (e) => {
     e.preventDefault()
     console.log('search game function')
@@ -11,5 +13,9 @@ const searchGame = async (e) => {
     }    
 }
 
+
+
 document.querySelector('#search-btn').addEventListener('click', searchGame)
+
+
 

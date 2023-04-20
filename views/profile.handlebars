@@ -1,8 +1,9 @@
+ <link rel="stylesheet" href="/css/loggedin.css"/>
  <h1 id="fav-heading">FAVORITES</h1>
-    <div class="container-fluid text-center popular">
-      <div class="row">
+    <div>
+      <div class="popular" style="display: flex;">
         {{#each games as |game|}}
-        <div class="col">
+        <div class="d-flex row">
           <div class="card">
             <img
               src="{{game.background_image}}"
@@ -10,12 +11,11 @@
               alt="placeholder"
             />
             <div class="card-body">
-              <h5 class="card-title">{{game.name}}</h5>
+              <h5 class="card-title">{{game.gameName}}</h5>
               <p class="card-text">
-                <p>{{game.platform}}</p>
-                <p>{{game.release_date}}</p>
-                <p>{{game.rating}}</p>
-                <p>{{game.description}}</p>
+                <p>Release Date: {{game.release_date}}</p>
+                <p>Rating: {{game.rating}}</p>
+                <p>Description: {{game.description}}</p>
               </p>
             </div>
           </div>
