@@ -9,7 +9,7 @@ const searchGame = async (e) => {
     const gameName = document.querySelector('#game').value
 
     if (gameName){
-        window.location.replace(`http://localhost:3001/game?search=${gameName}`)
+        window.location.replace(`https://gaseous-water.herokuapp.com/game?search=${gameName}`)
     }    
 }
 
